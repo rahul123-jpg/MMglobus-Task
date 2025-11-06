@@ -551,6 +551,11 @@ footer a{
     gap: 25px;
 
   }
+
+  .about-card{
+     margin: 20px;
+    padding: 20px;
+  }
   
   .blog-hero {
     padding: 60px 20px;
