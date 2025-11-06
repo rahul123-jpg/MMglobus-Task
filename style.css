@@ -1,0 +1,686 @@
+:root {
+    --primary: #1a3a52;
+    --primary-light: #2d5a7b;
+    --accent: #d4a574;
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: #222;
+  background: #fff;
+  scroll-behavior: smooth;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 20px;
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 100px;
+  width: 100px;
+}
+
+.logo span {
+  font-weight: 700;
+  font-size: 22px;
+  color: black;
+  letter-spacing: 0.5px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav a {
+  font-family: 'Poppins', sans-serif; 
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary) !important;
+  text-decoration: none;  
+  position: relative;    
+  padding: 8px 12px;
+}
+
+.navbar a:hover::after {
+  width: 60%;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d4a574;
+  transition: width 0.3s ease;
+}
+
+/* hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: #234863;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  width: 470px;
+  height: 470px;
+  background-color: rgba(231, 228, 224, 0.1);
+  animation: float 6s ease-in-out infinite;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color:white;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-top: 15px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color:  #d4a574;;
+  color: #234863;
+  border: 2px solid  #d4a574;;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color:  #d4a574;;
+  border: 2px solid  #d4a574;;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ffb347;
+  border: 2px solid #d4a574;;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #d4a574;   /* your requested color */
+  border: 2px solid ;
+}
+
+.btn-outline:hover {
+  background-color:  #d4a574;
+  color: #234863;
+}
+
+
+/* ---------- About Section ---------- */
+.about {
+  padding: 120px 80px 80px;
+  background: #f8fbff;
+}
+
+.about h2 {
+  font-size: 32px;
+  color: #042744;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px; /* thoda space underline ke liye */
+}
+
+.about h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px; /* underline ki length */
+  height: 3px; /* underline ki thickness */
+  background-color: #d4a574; /* underline ka color */
+  border-radius: 2px;
+}
+
+
+.about p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.8;
+}
+
+.about .highlight {
+  margin-top: 10px;
+  color: rgb(110, 76, 76);
+  font-weight: 500;
+}
+
+/* ---------- Episode Section ---------- */
+.episode {
+  text-align: center;
+  background: #ffffff;
+}
+
+.episode .img-mic-icon {
+  display: block;
+  margin: 0 auto 10px; 
+  height: 200px;
+}
+
+.episode h4 {
+  border: 2px solid #00b894;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+.podcast-icon {
+  width: 80px;  
+  margin-bottom: 20px;
+}
+
+.episode h2 {
+  font-size: 30px;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.episode .subtext {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin: 6px;
+  display: inline-block;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.spotify { background: #1DB954; }
+.apple { background: #B34BC2; }
+.youtube { background: #FF0000; }
+.amazon { background: #FF9900; }
+
+.buttons a:hover {
+  opacity: 0.8;
+}
+
+/* ---------- Episodes Grid Cards ---------- */
+.episodes-section {
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.episode-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to top, #234863 70%, #ffffff 50%);
+  border: 1px solid rgb(209, 207, 207);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.episode-card:hover {
+  border-color: #d4a574;
+  transform: translateY(-13px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+
+.episode-card img {
+  height: 120px;
+  margin-bottom: 50px;
+}
+
+.episode-card h4 {
+  color: black; 
+  font-style: italic;
+  font-size: 15px;
+  border: 2px solid #d4a574 !important;  
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.episode-card h2 {
+  font-size: 20px;
+  color:white;
+  margin-bottom: 10px;
+}
+
+.episode-card .subtext {
+  color: whitesmoke;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.episode-card .buttons a {
+  padding: 8px 14px;
+  margin: 4px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+
+
+
+/* ---------- Coming Soon ---------- */
+.coming-soon {
+  background: #eaf3ff;
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.coming-soon h2 {
+  font-size: 32px;
+  color: #042744;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px; /* space underline ke liye */
+}
+
+.coming-soon h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px; /* underline ki length */
+  height: 3px; /* underline ki thickness */
+  background-color: #d4a574; /* underline ka color */
+  border-radius: 2px;
+}
+
+.coming-soon p {
+  color: #444;
+  margin-top: 10px;
+}
+
+
+
+.card h4 {
+  border: 2px solid #d4a574 !important;  
+  display: inline-block;      
+  padding: 4px 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;  
+  font-style: italic;
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* ---------- Episodes Cards ---------- */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.episodes-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.column {
+  width: 48%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 13px;
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h4 {
+  color: #d4a574;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card h3 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  font-size: 15px;
+}
+
+/* ---------- Subscribe Section ---------- */
+.subscribe-section {
+  background:  #234863;
+  text-align: center;
+  padding: 50px 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.subscribe-box h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.subscribe-box p {
+  font-size: 15px;
+  color: #f9f9f9;
+  margin-bottom: 25px;
+}
+
+.subscribe-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.subscribe-buttons a {
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.spotify-btn {
+  background-color:#d4a574;
+    border: 2px solid transparent;
+  color: #183f64;
+}
+
+.spotify-btn:hover {
+  background-color:  #234863;
+  color: #d4a574;
+  border-color: #d4a574;
+}
+
+.blog-btn {
+  border: 2px solid#d4a574 ;
+  color: #d4a574;
+}
+
+.blog-btn:hover {
+  background-color:#d4a574;
+  color:  #234863
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background:  #234863;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px; 
+}
+
+.footer p {
+  color: white;
+}
+
+footer a {
+  color: #d4a574;
+  text-decoration: none;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+ .navbar nav {
+    display: none;
+    flex-direction: column;
+    background: white;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    width: 90%;             
+    margin-left: auto;     
+    margin-right: auto;     
+    border-radius: 10px;    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 10px 0;        
+  }
+
+  .navbar.active nav {
+    display: flex;
+  }
+
+  .navbar nav a {
+    padding: 10px 0;          /* updated: make links evenly spaced */
+    text-align: center;
+    border-bottom: 1px solid #eee; /* added: clean separator */
+  }
+
+   .navbar nav a:last-child {
+    border-bottom: none;      /* added: remove border for last link */
+  }
+
+  
+  .logo img { 
+    height: 60px;
+    width: 60px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .about {
+    padding: 80px 30px;
+  }
+
+  .episodes-wrapper {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .episode h2 {
+    font-size: 24px;
+  }
+
+  .buttons a {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .coming-soon {
+    padding: 60px 20px;
+  }
+
+  .subscribe-box h2 {
+    font-size: 22px;
+  }
+
+  .subscribe-box p {
+    font-size: 13px;
+  }
+
+  .subscribe-buttons {
+    flex-direction: column;
+  }
+
+  .footer {
+    font-size: 13px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 55px;
+    width: 55px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .about {
+    padding: 60px 20px;
+  }
+
+  .about h2 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .subscribe-section {
+    padding: 40px 10px;
+  }
+
+  .subscribe-buttons a {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+}
+
+
+.navbar.active + .hero {
+  margin-top: 180px;
+  transition: margin-top 0.3s ease;
+}
