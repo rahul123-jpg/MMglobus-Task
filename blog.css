@@ -165,7 +165,7 @@ body {
   gap: 45px;
   padding: 20px 80px;
   justify-items: center;
-  align-items: start; 
+  align-items: start; /* 👈 ye add karo */
 }
 
 
